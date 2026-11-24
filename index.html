@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ko"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>나의 웹사이트</title>
+<title>소개</title>
 <style>
 body{margin:0;font-family:"Noto Sans KR",system-ui,sans-serif;background:#fafafa;color:#222;line-height:1.6}
 main{max-width:760px;margin:0 auto;padding:24px 16px}
@@ -151,71 +150,62 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
 .st-editing .st-embed iframe{pointer-events:none}
 </style></head>
 <body>
+<nav class="st-nav" data-studio="nav">
+  <div class="st-nav-in">
+    <a class="st-nav-a" href="index.html">홈</a>
+    <a class="st-nav-a is-on" href="about.html">소개</a>
+    <a class="st-nav-a" href="star.html">평</a>
+  </div>
+</nav>
+
 <main>
-<h1 class="st-h">오늘의 기분</h1>
-<p class="st-p">왼쪽 블록 넣기로 내용을 채워 보세요.</p>
-<div class="st-dset">
-  <form class="st-sec st-dform" data-st="dform" data-tab="방명록" data-api="">
-    <h2 class="st-h">방명록 남기기</h2>
-    <label class="st-fl"><span>이름</span><input name="이름" required="" placeholder="예: 민수" type="text" maxlength="100"></label>
-    <label class="st-fl"><span>내용</span><textarea name="내용" required="" placeholder="하고 싶은 말을 남겨요" maxlength="500"></textarea></label>
-    <button class="st-btn st-sub" type="submit">저장하기</button>
-    <p class="st-fmsg" aria-live="polite"></p>
-  </form>
-  <section class="st-sec st-dlist" data-st="dlist" data-tab="방명록" data-api="" data-show="이름,내용,createdAt" data-view="bubble" data-sort="createdAt" data-desc="1" data-limit="20" data-search="">
-    <div class="st-dl-top">
-      <h2 class="st-h">친구들이 남긴 글</h2>
-      <button class="st-dl-rf" type="button">↻ 새로고침</button>
-    </div>
-    <div class="st-dl-out" aria-live="polite"></div>
-  </section>
-  <section class="st-sec st-dstat" data-st="dstat" data-tab="방명록" data-api="" data-calc="count" data-unit="개">
-    <h2 class="st-h">지금까지 남긴 글</h2>
-    <div class="st-ds-out" aria-live="polite"></div>
-  </section>
-</div>
-<div class="st-dset">
-  <form class="st-sec st-dform" data-st="dform" data-tab="기분기록" data-api="">
-    <h2 class="st-h">오늘의 기분</h2>
-    <label class="st-fl"><span>날짜</span><input name="날짜" required="" type="date" data-today=""></label>
-    <div class="st-fl" role="radiogroup" aria-label="기분" data-kind="chips">
-      <span>기분</span>
-      <div class="st-rg">
-        <label><input type="radio" name="기분" value="😀" required=""><span>😀</span></label>
-        <label><input type="radio" name="기분" value="🙂" required=""><span>🙂</span></label>
-        <label><input type="radio" name="기분" value="😐" required=""><span>😐</span></label>
-        <label><input type="radio" name="기분" value="😢" required=""><span>😢</span></label>
-        <label><input type="radio" name="기분" value="😡" required=""><span>😡</span></label>
+  <h1 class="st-h">나의 공부 기록</h1>
+  <p class="st-p">이 페이지에 들어갈 내용을 왼쪽 블록 넣기로 채워 보세요.</p>
+  <div class="st-dset">
+    <form class="st-sec st-dform" data-st="dform" data-tab="공부시간" data-api="">
+      <h2 class="st-h">공부 시간 기록</h2>
+      <label class="st-fl"><span>날짜</span><input name="날짜" required="" type="date" data-today=""></label>
+      <label class="st-fl"><span>과목</span><select name="과목" required=""><option>국어</option><option>수학</option><option>영어</option><option>탐구</option><option>기타</option></select></label>
+      <label class="st-fl"><span>시간(분)</span><div class="st-uw"><input name="시간(분)" required="" type="number" inputmode="decimal" step="any" min="0"><span class="st-u">분</span></div></label>
+      <label class="st-fl"><span>한 일</span><input name="한 일" type="text" maxlength="100"></label>
+      <button class="st-btn st-sub" type="submit">저장하기</button>
+      <p class="st-fmsg" aria-live="polite"></p>
+    </form>
+    <section class="st-sec st-dlist" data-st="dlist" data-tab="공부시간" data-api="" data-show="날짜,과목,시간(분),한 일" data-view="table" data-sort="날짜" data-desc="1" data-limit="20">
+      <div class="st-dl-top">
+        <h2 class="st-h">공부 기록</h2>
+        <button class="st-dl-rf" type="button">↻ 새로고침</button>
       </div>
-    </div>
-    <label class="st-fl"><span>컨디션</span><div class="st-uw"><input name="컨디션" type="range" min="1" max="10" step="1" value="6"><output class="st-rv"></output></div></label>
-    <div class="st-fl" role="radiogroup" aria-label="운동했나요" data-kind="yn">
-      <span>운동했나요</span>
-      <div class="st-rg">
-        <label><input type="radio" name="운동했나요" value="예"><span>예</span></label>
-        <label><input type="radio" name="운동했나요" value="아니오"><span>아니오</span></label>
+      <div class="st-dl-out" aria-live="polite"></div>
+    </section>
+    <section class="st-sec st-dstat" data-st="dstat" data-tab="공부시간" data-api="" data-calc="sum" data-field="시간(분)" data-group="과목" data-unit="분">
+      <h2 class="st-h">과목별 공부 시간(분)</h2>
+      <div class="st-ds-out" aria-live="polite"></div>
+    </section>
+  </div>
+  <div class="st-dset">
+    <form class="st-sec st-dform" data-st="dform" data-tab="평점" data-api="">
+      <h2 class="st-h">별점 남기기</h2>
+      <label class="st-fl"><span>항목</span><input name="항목" required="" type="text" maxlength="100"></label>
+      <label class="st-fl"><span>별점</span><select name="별점" required="" data-kind="rating"><option value="5">★★★★★ (5)</option><option value="4">★★★★☆ (4)</option><option value="3">★★★☆☆ (3)</option><option value="2">★★☆☆☆ (2)</option><option value="1">★☆☆☆☆ (1)</option></select></label>
+      <label class="st-fl"><span>한 줄 평</span><input name="한 줄 평" type="text" maxlength="100"></label>
+      <button class="st-btn st-sub" type="submit">저장하기</button>
+      <p class="st-fmsg" aria-live="polite"></p>
+    </form>
+    <section class="st-sec st-dlist" data-st="dlist" data-tab="평점" data-api="" data-show="항목,별점,한 줄 평,createdAt" data-view="card" data-sort="createdAt" data-desc="1" data-limit="20" data-stars="별점">
+      <div class="st-dl-top">
+        <h2 class="st-h">평가 목록</h2>
+        <button class="st-dl-rf" type="button">↻ 새로고침</button>
       </div>
-    </div>
-    <label class="st-fl"><span>한 줄 메모</span><input name="한 줄 메모" placeholder="오늘 있었던 일" type="text" maxlength="100"></label>
-    <button class="st-btn st-sub" type="submit">저장하기</button>
-    <p class="st-fmsg" aria-live="polite"></p>
-  </form>
-  <section class="st-sec st-dlist" data-st="dlist" data-tab="기분기록" data-api="" data-show="날짜,기분,컨디션,운동했나요,한 줄 메모" data-view="table" data-sort="날짜" data-desc="1" data-limit="20">
-    <div class="st-dl-top">
-      <h2 class="st-h">기분 기록</h2>
-      <button class="st-dl-rf" type="button">↻ 새로고침</button>
-    </div>
-    <div class="st-dl-out" aria-live="polite"></div>
-  </section>
-  <section class="st-sec st-dstat" data-st="dstat" data-tab="기분기록" data-api="" data-calc="avg" data-field="컨디션" data-group="기분" data-unit="점">
-    <h2 class="st-h">기분별 평균 컨디션</h2>
-    <div class="st-ds-out" aria-live="polite"></div>
-  </section>
-</div>
-
+      <div class="st-dl-out" aria-live="polite"></div>
+    </section>
+    <section class="st-sec st-dstat" data-st="dstat" data-tab="평점" data-api="" data-calc="avg" data-field="별점" data-group="항목" data-unit="점">
+      <h2 class="st-h">항목별 평균 별점</h2>
+      <div class="st-ds-out" aria-live="polite"></div>
+    </section>
+  </div>
+  
 </main>
-
-
 
 
 <script data-studio="js">
